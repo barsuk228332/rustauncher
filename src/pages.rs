@@ -20,17 +20,9 @@ use crate::{
 // ---------------------------------------------------------------------------
 
 pub(crate) fn nav(app: &mut App, ui: &mut Ui) {
+    let logo = app.assets.logo.clone();
     ui.horizontal(|ui| {
-        let (rect, _) = ui.allocate_exact_size(vec2(34.0, 34.0), Sense::hover());
-        ui.painter()
-            .rect_filled(rect, Rounding::same(10.0), theme::ACCENT_SOFT);
-        icons::icon_at(
-            ui.painter(),
-            rect.center(),
-            19.0,
-            Icon::Wine,
-            theme::ACCENT,
-        );
+        ui.add(egui::Image::new(&logo).fit_to_exact_size(vec2(34.0, 34.0)));
         ui.add_space(10.0);
         ui.vertical(|ui| {
             ui.label(RichText::new("rustauncher").size(16.0).strong());
@@ -167,9 +159,10 @@ pub(crate) fn apps(app: &mut App, ui: &mut Ui) {
     ui.add_space(theme::SP_L);
 
     if total == 0 {
+        let image = app.assets.empty_apps.clone();
         widgets::empty_state(
             ui,
-            Icon::Apps,
+            &image,
             "Пока нет приложений",
             "Добавь .exe или просто перетащи файл в окно.",
             |ui| {
@@ -184,9 +177,10 @@ pub(crate) fn apps(app: &mut App, ui: &mut Ui) {
     }
 
     if rows.is_empty() {
+        let image = app.assets.empty_search.clone();
         widgets::empty_state(
             ui,
-            Icon::Search,
+            &image,
             "Ничего не найдено",
             "Попробуй другой запрос или сбрось поиск.",
             |ui| {
@@ -325,9 +319,10 @@ pub(crate) fn prefixes(app: &mut App, ui: &mut Ui) {
     ui.add_space(theme::SP_L);
 
     if app.cfg.prefixes.is_empty() {
+        let image = app.assets.empty_prefixes.clone();
         widgets::empty_state(
             ui,
-            Icon::Layers,
+            &image,
             "Нет префиксов",
             "Создай первый префикс — wineboot подготовит окружение.",
             |ui| {

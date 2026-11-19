@@ -13,6 +13,7 @@ toml = "0.8"
 ureq = { version = "2.10", features = ["tls", "json"] }
 anyhow = "1"
 dirs = "5"
+image = { version = "0.25", default-features = false, features = ["png"] }
 
 # Зависимости собираем с оптимизацией даже в dev — иначе GUI тормозит
 [profile.dev.package."*"]

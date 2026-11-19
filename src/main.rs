@@ -1,3 +1,4 @@
+mod assets;
 mod config;
 mod dialogs;
 mod icons;
@@ -18,10 +19,14 @@ use icons::Icon;
 use runners::{DlMsg, Runner, RunnerKind};
 
 fn main() -> eframe::Result<()> {
+    let mut viewport = egui::ViewportBuilder::default()
+        .with_inner_size([1240.0, 820.0])
+        .with_min_inner_size([980.0, 620.0]);
+    if let Some(icon) = assets::window_icon() {
+        viewport = viewport.with_icon(icon);
+    }
     let options = eframe::NativeOptions {
-        viewport: egui::ViewportBuilder::default()
-            .with_inner_size([1240.0, 820.0])
-            .with_min_inner_size([980.0, 620.0]),
+        viewport,
         ..Default::default()
     };
 
@@ -159,6 +164,7 @@ pub(crate) struct Confirm {
 pub(crate) struct App {
     pub(crate) cfg: Config,
     pub(crate) ctx: egui::Context,
+    pub(crate) assets: assets::Assets,
 
     pub(crate) page: Page,
     pub(crate) selected_prefix: Option<usize>,
@@ -192,6 +198,7 @@ impl App {
 
         let mut app = App {
             cfg,
+            assets: assets::Assets::load(&ctx),
             ctx,
             page: Page::Apps,
             selected_prefix,

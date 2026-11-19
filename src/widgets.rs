@@ -346,17 +346,16 @@ pub fn field_label(ui: &mut Ui, text: &str) {
 
 pub fn empty_state(
     ui: &mut Ui,
-    icon: Icon,
+    image: &egui::TextureHandle,
     title: &str,
     text: &str,
     action: impl FnOnce(&mut Ui),
 ) {
     ui.vertical_centered(|ui| {
         ui.add_space(theme::SP_XL);
-        let (rect, _) = ui.allocate_exact_size(vec2(56.0, 56.0), Sense::hover());
-        ui.painter()
-            .rect_filled(rect, Rounding::same(16.0), theme::CARD);
-        icons::icon_at(ui.painter(), rect.center(), 26.0, icon, theme::FAINT);
+        ui.add(
+            egui::Image::new(image).fit_to_exact_size(vec2(264.0, 165.0)),
+        );
         ui.add_space(theme::SP_M);
         ui.label(
             egui::RichText::new(title)

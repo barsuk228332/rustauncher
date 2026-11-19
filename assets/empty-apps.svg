@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E4A26A"/>
+      <stop offset="1" stop-color="#C2743B"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="146" y="52" width="220" height="140" rx="16" fill="none" stroke="#26282E" stroke-width="4"/>
+  <rect x="124" y="74" width="230" height="142" rx="16" fill="none" stroke="#2E3138" stroke-width="4"/>
+  <rect x="100" y="98" width="252" height="148" rx="16" fill="#202228" stroke="#464B55" stroke-width="4"/>
+
+  <circle cx="148" cy="144" r="23" fill="#3A2A1D"/>
+  <path d="M157 133 L170 144 L157 155 Z" fill="url(#accent)"/>
+  <rect x="184" y="132" width="104" height="13" rx="6.5" fill="#5A5E68"/>
+  <rect x="184" y="154" width="68" height="10" rx="5" fill="#33363D"/>
+
+  <rect x="124" y="202" width="96" height="27" rx="8" fill="url(#accent)"/>
+  <path d="M138 210 L150 215.5 L138 221 Z" fill="#1B140E"/>
+  <rect x="156" y="212" width="44" height="6" rx="3" fill="#1B140E" opacity="0.75"/>
+
+  <circle cx="338" cy="96" r="22" fill="url(#accent)"/>
+  <rect x="335" y="85" width="6" height="22" rx="3" fill="#1B140E"/>
+  <rect x="327" y="93" width="22" height="6" rx="3" fill="#1B140E"/>
+
+  <circle cx="88" cy="72" r="4" fill="#D18449" opacity="0.7"/>
+  <circle cx="402" cy="220" r="5" fill="#D18449" opacity="0.45"/>
+  <circle cx="72" cy="238" r="3" fill="#4A4E57"/>
+</svg>

@@ -1,5 +1,7 @@
 # rustauncher
 
+![rustauncher](assets/banner.png)
+
 Лёгкий менеджер Wine / Proton префиксов с GUI на egui. Сделан «для себя»:
 без демонов, баз данных и фоновых сервисов — один бинарь и один TOML.
 
@@ -45,6 +47,9 @@ cargo run --release
 Для сборки GUI нужны только runtime-библиотеки (libX11, libxkbcommon, libwayland,
 libGL/libEGL) — на Fedora они уже есть. Dev-пакеты не требуются: winit грузит их
 через dlopen.
+
+Готовые логотип, иконки, баннер и `.desktop` лежат в `assets/`; как установить
+иконку и ярлык — в `assets/README.md`.
 
 ## План развития
 

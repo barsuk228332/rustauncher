@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=rustauncher
+GenericName=Wine/Proton Prefix Manager
+Comment=Менеджер Wine и Proton префиксов
+Exec=rustauncher
+Icon=rustauncher
+Terminal=false
+Categories=Utility;
+Keywords=wine;proton;prefix;launcher;
+StartupNotify=true
+StartupWMClass=rustauncher
