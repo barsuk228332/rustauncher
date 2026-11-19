@@ -147,6 +147,9 @@ fn prefix_dialog(app: &mut App, ctx: &Context) {
         app.create_prefix_from_dialog();
     } else if cancel || closed {
         app.prefix_dialog = None;
+    } else {
+        // сохраняем введённое, иначе текст теряется на следующем кадре
+        app.prefix_dialog = Some(form);
     }
 }
 
@@ -293,6 +296,9 @@ fn app_dialog(app: &mut App, ctx: &Context) {
         app.save_app_dialog();
     } else if cancel || closed {
         app.app_dialog = None;
+    } else {
+        // сохраняем введённое, иначе текст теряется на следующем кадре
+        app.app_dialog = Some(form);
     }
 }
 
@@ -336,5 +342,8 @@ fn confirm_dialog(app: &mut App, ctx: &Context) {
         app.apply_confirm();
     } else if no || closed {
         app.confirm = None;
+    } else {
+        // сохраняем состояние чекбокса между кадрами
+        app.confirm = Some(confirm);
     }
 }
